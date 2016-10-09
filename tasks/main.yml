@@ -9,7 +9,7 @@
   when: download | changed
 
 - name: copy btsync to /usr/local/bin
-  command: cp /tmp/btsync /usr/local/bin/
+  command: cp /tmp/rslsync /usr/local/bin/btsync
   notify: start btsync
   when: download | changed
 
