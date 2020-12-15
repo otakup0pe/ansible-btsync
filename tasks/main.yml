@@ -6,12 +6,12 @@
 
 - name: extract
   command: tar xvzf /tmp/btsync.tar.gz -C /tmp
-  when: download | changed
+  when: download.changed
 
 - name: copy btsync to /usr/local/bin
   command: cp /tmp/rslsync /usr/local/bin/btsync
   notify: start btsync
-  when: download | changed
+  when: download.changed
 
 - name: install service
   template: src=btsync dest=/etc/init.d/btsync mode=755
